@@ -9,6 +9,13 @@ npm install react-native-myid
 ```
 ## Setting up on Android
 ```sh
+////
+AndroidManifest.xml:
+
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.CAMERA" />
+
+////
 
 buildscript {
 
@@ -27,7 +34,17 @@ apply plugin: "com.facebook.react.rootproject"
 ```
 ## Setting up on IOS
 ```sh
+////
+Info.plist:
+
+<key>NSCameraUsageDescription</key>
+<string>Required for document and facial capture</string>
+
+////
+
 pod install
+
+
 ```
 
 ## Usage
