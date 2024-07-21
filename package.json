@@ -1,6 +1,6 @@
 {
   "name": "react-native-myid",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "This package is a react-native module for MyID",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
