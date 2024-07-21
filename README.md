@@ -11,6 +11,9 @@ npm install react-native-myid
 ```sh
 
 buildscript {
+
+...
+
 allprojects {
   repositories {
     // add this line
