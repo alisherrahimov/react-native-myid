@@ -1,23 +1,70 @@
 # react-native-myid
 
-for myid sdk
+This package is a react-native module for MyID
 
 ## Installation
 
 ```sh
 npm install react-native-myid
 ```
+## Setting on Android
+```sh
+
+buildscript {
+  ext {
+    buildToolsVersion = "34.0.0"
+    minSdkVersion = 23
+    compileSdkVersion = 34
+    targetSdkVersion = 34
+    ndkVersion = "26.1.10909125"
+    kotlinVersion = "1.9.22"
+  }
+  repositories {
+    google()
+    mavenCentral()
+  }
+  dependencies {
+    classpath("com.android.tools.build:gradle")
+    classpath("com.facebook.react:react-native-gradle-plugin")
+    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+  }
+}
+
+allprojects {
+  repositories {
+    // add this line
+  +  maven { url "https://artifactory.aigroup.uz:443/artifactory/myid" }
+  }
+}
+
+apply plugin: "com.facebook.react.rootproject"
+
+
+```
+## Setting on IOS
+```sh
+pod install
+```
 
 ## Usage
 
 
 ```js
-import { multiply } from 'react-native-myid';
+import { startMyId } from 'react-native-myid';
 
 // ...
 
-const result = await multiply(3, 7);
+startMyId(
+    client_id // 
+    clientHash //
+    clientHashId //
+    language // "EN" "UZ" "RU" "KY"
+    type? // "DEBUG" "PRODUCTION"
+)
 ```
+
+
+
 
 
 ## Contributing

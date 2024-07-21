@@ -76,9 +76,15 @@ class MyidModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMo
       "DEBUG" -> MyIdBuildMode.DEBUG
       else -> MyIdBuildMode.PRODUCTION
     }
+    val language = when (lang) {
+      "EN" -> "en"
+      "RU" -> "ru"
+      "UZ" -> "uz"
+      else -> "ky"
+    }
     val config = MyIdConfig.Builder(clientId)
       .withClientHash(clientHash, clientHashId)
-      .withLocale(Locale(lang))
+      .withLocale(Locale(language))
       .withBuildMode(mode)
       .build();
     if (currentActivity !== null) {
