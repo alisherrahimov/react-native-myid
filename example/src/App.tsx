@@ -1,17 +1,27 @@
-import { useState, useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-myid';
+import { StyleSheet, View, Button } from 'react-native';
+import { startMyId, useListener } from 'react-native-myid';
 
 export default function App() {
-  const [result, setResult] = useState<number | undefined>();
-
-  useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  const { code, error, success } = useListener();
+  if (success) {
+    console.log(code);
+  } else {
+    console.log(error);
+  }
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Button
+        title="call native"
+        onPress={() => {
+          startMyId({
+            clientId: 'clientId',
+            clientHash: 'clientHash',
+            clientHashId: 'clientHashId',
+            lang: 'EN',
+          });
+        }}
+      />
     </View>
   );
 }

@@ -1,7 +1,7 @@
 {
   "name": "react-native-myid",
-  "version": "0.1.0",
-  "description": "for myid sdk",
+  "version": "0.1.1",
+  "description": "This package is a react-native module for MyID",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
@@ -16,6 +16,9 @@
   "files": [
     "src",
     "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
     "android",
     "ios",
     "cpp",
@@ -26,9 +29,6 @@
     "!android/gradlew",
     "!android/gradlew.bat",
     "!android/local.properties",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__",
     "!**/.*"
   ],
   "scripts": {
@@ -166,12 +166,7 @@
           "esm": true
         }
       ],
-      [
-        "typescript",
-        {
-          "project": "tsconfig.build.json"
-        }
-      ]
+      "typescript"
     ]
   },
   "create-react-native-library": {

@@ -1,10 +1,18 @@
-#import <React/RCTBridgeModule.h>
 
-@interface RCT_EXTERN_MODULE(Myid, NSObject)
+#import <Foundation/Foundation.h>
+#import "React/RCTBridgeModule.h"
+#import "React/RCTEventEmitter.h"
 
-RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
+
+@interface RCT_EXTERN_MODULE(Myid, RCTEventEmitter)
+
+RCT_EXTERN_METHOD(startMyId:
+                  (NSString *) clientId
+                  clientHash: (NSString *)clientHash
+                  clientHashId: (NSString *)clientHashId
+                  language: (NSString *)language
+                  type: (NSString *)type
+)
 
 + (BOOL)requiresMainQueueSetup
 {
