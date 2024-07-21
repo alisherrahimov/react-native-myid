@@ -7,29 +7,10 @@ This package is a react-native module for MyID
 ```sh
 npm install react-native-myid
 ```
-## Setting on Android
+## Setting up on Android
 ```sh
 
 buildscript {
-  ext {
-    buildToolsVersion = "34.0.0"
-    minSdkVersion = 23
-    compileSdkVersion = 34
-    targetSdkVersion = 34
-    ndkVersion = "26.1.10909125"
-    kotlinVersion = "1.9.22"
-  }
-  repositories {
-    google()
-    mavenCentral()
-  }
-  dependencies {
-    classpath("com.android.tools.build:gradle")
-    classpath("com.facebook.react:react-native-gradle-plugin")
-    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
-  }
-}
-
 allprojects {
   repositories {
     // add this line
@@ -41,7 +22,7 @@ apply plugin: "com.facebook.react.rootproject"
 
 
 ```
-## Setting on IOS
+## Setting up on IOS
 ```sh
 pod install
 ```
