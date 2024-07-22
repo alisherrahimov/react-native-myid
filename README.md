@@ -7,7 +7,9 @@ This package is a react-native module for MyID
 ```sh
 npm install react-native-myid
 ```
+
 ## Setting up on Android
+
 ```sh
 ////
 AndroidManifest.xml:
@@ -32,7 +34,9 @@ apply plugin: "com.facebook.react.rootproject"
 
 
 ```
+
 ## Setting up on IOS
+
 ```sh
 ////
 Info.plist:
@@ -49,7 +53,6 @@ pod install
 
 ## Usage
 
-
 ```js
 import { startMyId, useListener } from 'react-native-myid';
 
@@ -57,17 +60,17 @@ import { startMyId, useListener } from 'react-native-myid';
 
 const App = ()=>{
   const {code,error,success} = useListener()
-  if(success){
-    console.log(code)
-  }else{
+    if(success){
+     console.log(code)
+    }else{
     console.log(error)
-  }
+    }
 
   return(
       <View>
         <Button title="start myid" onPress={()=>{
             startMyId(
-            client_id // 
+            client_id //
             clientHash //
             clientHashId //
             language // "EN" "UZ" "RU" "KY"
@@ -81,10 +84,6 @@ const App = ()=>{
 
 
 ```
-
-
-
-
 
 ## Contributing
 
