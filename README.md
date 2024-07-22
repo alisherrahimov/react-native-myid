@@ -74,7 +74,7 @@ const App = ()=>{
             type? // "DEBUG" "PRODUCTION"
           )
         }} />
-      <View/>
+      </View>
   )
 
 }
