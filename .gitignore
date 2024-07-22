@@ -8,7 +8,9 @@
 # VSCode
 .vscode/
 jsconfig.json
-
+node_modules
+.yarn
+.tgz
 # Xcode
 #
 build/

@@ -19,5 +19,5 @@ export interface SuccessEvent {
 
 export interface ErrorEvent {
   message: string;
-  code: string;
+  code: string | 'error';
 }

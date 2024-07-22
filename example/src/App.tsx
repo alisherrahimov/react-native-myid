@@ -4,9 +4,9 @@ import { startMyId, useListener } from 'react-native-myid';
 export default function App() {
   const { code, error, success } = useListener();
   if (success) {
-    console.log(code);
+    console.log(code, 'code');
   } else {
-    console.log(error);
+    console.log(error, 'error');
   }
 
   return (
@@ -18,7 +18,7 @@ export default function App() {
             clientId: 'clientId',
             clientHash: 'clientHash',
             clientHashId: 'clientHashId',
-            lang: 'EN',
+            lang: 'UZ',
           });
         }}
       />

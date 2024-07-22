@@ -31,10 +31,7 @@ class MyidModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMo
 
   // Example method
   // See https://reactnative.dev/docs/native-modules-android
-  @ReactMethod
-  fun multiply(a: Double, b: Double, promise: Promise) {
-    promise.resolve(a * b)
-  }
+
 
   companion object {
     const val NAME = "Myid"
@@ -63,6 +60,15 @@ class MyidModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMo
     sendEvent("onUserExited", params)
   }
 
+  @ReactMethod
+  fun addListener(eventName: String) {
+    // Add custom code for adding a listener
+  }
+
+  @ReactMethod
+  fun removeListeners(count: Int) {
+    // Add custom code for removing listeners
+  }
 
   @ReactMethod
   fun startMyId(
@@ -82,6 +88,9 @@ class MyidModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMo
       "UZ" -> "uz"
       else -> "ky"
     }
+    println(language)
+    println(clientId)
+    println(type)
     val config = MyIdConfig.Builder(clientId)
       .withClientHash(clientHash, clientHashId)
       .withLocale(Locale(language))
