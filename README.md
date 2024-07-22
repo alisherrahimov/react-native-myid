@@ -51,17 +51,35 @@ pod install
 
 
 ```js
-import { startMyId } from 'react-native-myid';
+import { startMyId, useListener } from 'react-native-myid';
 
 // ...
 
-startMyId(
-    client_id // 
-    clientHash //
-    clientHashId //
-    language // "EN" "UZ" "RU" "KY"
-    type? // "DEBUG" "PRODUCTION"
-)
+const App = ()=>{
+  const {code,error,success} = useListener()
+  if(success){
+    console.log(code)
+  }else{
+    console.log(error)
+  }
+
+  return(
+      <View>
+        <Button title="start myid" onPress={()=>{
+            startMyId(
+            client_id // 
+            clientHash //
+            clientHashId //
+            language // "EN" "UZ" "RU" "KY"
+            type? // "DEBUG" "PRODUCTION"
+          )
+        }} />
+      <View/>
+  )
+
+}
+
+
 ```
 
 
