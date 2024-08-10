@@ -18,8 +18,7 @@ AndroidManifest.xml:
 <uses-permission android:name="android.permission.CAMERA" />
 
 ////
-
-
+build.gradle:
 
 allprojects {
   repositories {
