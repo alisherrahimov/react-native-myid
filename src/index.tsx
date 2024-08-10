@@ -1,9 +1,4 @@
-import {
-  NativeModules,
-  Platform,
-  NativeEventEmitter,
-  LogBox,
-} from 'react-native';
+import { NativeModules, Platform, NativeEventEmitter } from 'react-native';
 import type { ErrorEvent, ListenerHook, MyidType, SuccessEvent } from './type';
 import React, { useEffect } from 'react';
 
@@ -25,8 +20,6 @@ const Myid = NativeModules.Myid
     );
 
 const event = new NativeEventEmitter(NativeModules.Myid);
-LogBox.ignoreLogs(['new NativeEventEmitter']); // Ignore log notification by message
-LogBox.ignoreAllLogs();
 
 const useListener = (): ListenerHook => {
   const [code, setCode] = React.useState<SuccessEvent>({

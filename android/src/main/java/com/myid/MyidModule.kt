@@ -41,7 +41,8 @@ class MyidModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMo
     val params = Arguments.createMap()
     params.putString("code", result.code)
     params.putDouble("comparison", result.comparison)
-
+    println(params)
+    println("params")
     sendEvent("onSuccess", params)
   }
 
@@ -49,7 +50,8 @@ class MyidModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMo
     val params = Arguments.createMap()
     params.putString("message", exception.message)
     params.putInt("code", exception.code)
-
+    println(params)
+    println("error")
     sendEvent("onError", params)
   }
 
@@ -88,9 +90,6 @@ class MyidModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMo
       "UZ" -> "uz"
       else -> "ky"
     }
-    println(language)
-    println(clientId)
-    println(type)
     val config = MyIdConfig.Builder(clientId)
       .withClientHash(clientHash, clientHashId)
       .withLocale(Locale(language))

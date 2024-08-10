@@ -19,14 +19,12 @@ AndroidManifest.xml:
 
 ////
 
-buildscript {
 
-...
 
 allprojects {
   repositories {
     // add this line
-  +  maven { url "https://artifactory.aigroup.uz:443/artifactory/myid" }
+    maven { url "https://artifactory.aigroup.uz:443/artifactory/myid" }
   }
 }
 
