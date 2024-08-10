@@ -15,10 +15,11 @@ export default function App() {
         title="call native"
         onPress={() => {
           startMyId({
-            clientId: 'clientId',
-            clientHash: 'clientHash',
-            clientHashId: 'clientHashId',
-            lang: 'UZ',
+            clientId: 'client_id',
+            clientHash: 'client_hash',
+            clientHashId: 'client_hash_id',
+            lang: 'EN', // EN, UZ, RU, KY
+            type: 'DEBUG', // DEBUG, PRODUCTION
           });
         }}
       />
