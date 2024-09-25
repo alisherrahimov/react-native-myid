@@ -4,6 +4,8 @@ export interface MyidType {
   clientHashId: string;
   lang: 'UZ' | 'RU' | 'EN' | 'KY';
   type?: 'DEBUG' | 'PRODUCTION';
+  withPassportData?: string;
+  withBirthDate?: string;
 }
 
 export interface ListenerHook {
@@ -15,6 +17,7 @@ export interface ListenerHook {
 export interface SuccessEvent {
   code: string;
   comparison: string;
+  image: string;
 }
 
 export interface ErrorEvent {

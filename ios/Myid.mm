@@ -12,6 +12,8 @@ RCT_EXTERN_METHOD(startMyId:
                   clientHashId: (NSString *)clientHashId
                   language: (NSString *)language
                   type: (NSString *)type
+                  passport: (NSString *)passport
+                  birthDate: (NSString *)birthDate
 )
 
 + (BOOL)requiresMainQueueSetup

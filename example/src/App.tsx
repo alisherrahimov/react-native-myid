@@ -20,6 +20,8 @@ export default function App() {
             clientHashId: 'client_hash_id',
             lang: 'EN', // EN, UZ, RU, KY
             type: 'DEBUG', // DEBUG, PRODUCTION
+            withBirthDate: 'DD.MM.YYYY',
+            withPassportData: 'AA*******',
           });
         }}
       />

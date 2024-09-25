@@ -25,6 +25,7 @@ const useListener = (): ListenerHook => {
   const [code, setCode] = React.useState<SuccessEvent>({
     code: '',
     comparison: '',
+    image: '',
   });
   const [error, setError] = React.useState<ErrorEvent>({
     code: '',
@@ -64,7 +65,9 @@ async function startMyId(body: MyidType): Promise<void> {
     body.clientHash,
     body.clientHashId,
     body.lang,
-    body.type
+    body.type,
+    body.withPassportData,
+    body.withBirthDate
   );
 }
 export { useListener, startMyId };

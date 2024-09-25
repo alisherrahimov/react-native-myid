@@ -55,7 +55,7 @@ import { startMyId, useListener } from 'react-native-myid';
 
 // ...
 
-const App = ()=>{
+const App = () => {
   const {code,error,success} = useListener()
     if(success){
      console.log(code)
@@ -66,12 +66,15 @@ const App = ()=>{
   return(
       <View>
         <Button title="start myid" onPress={()=>{
-            startMyId(
-            client_id //
+            startMyId({
+              client_id //
             clientHash //
             clientHashId //
             language // "EN" "UZ" "RU" "KY"
             type? // "DEBUG" "PRODUCTION"
+            withPassportDate // "AA1101100"
+            withBirthDate // "dd.MM.yyyy"
+            }
           )
         }} />
       </View>
